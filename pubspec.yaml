@@ -1,5 +1,5 @@
 name: gym_manager_backup_manager_core
-description: A sample command-line application.
+description: A core library for managing backups in the Gym Manager application.
 version: 1.0.0
 publish_to: none # Remove this line if you wish to publish to pub.dev
 # repository: https://github.com/my_org/my_repo

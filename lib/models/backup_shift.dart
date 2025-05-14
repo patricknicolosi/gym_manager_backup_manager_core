@@ -28,14 +28,6 @@ class BackupShift {
     return '$minutes $hours * * $dow';
   }
 
-  BackupShift copyWith({String? id, int? dayOfWeek, TimeOfDay? start}) {
-    return BackupShift(
-      id: id ?? this.id,
-      dayOfWeek: dayOfWeek ?? this.dayOfWeek,
-      start: start ?? this.start,
-    );
-  }
-
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -45,4 +37,9 @@ class BackupShift {
 
   @override
   int get hashCode => id.hashCode;
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
 }
