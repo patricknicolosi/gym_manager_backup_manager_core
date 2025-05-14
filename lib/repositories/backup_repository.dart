@@ -33,13 +33,14 @@ class BackupRepository {
     }
   }
 
-  static Future backup() async {
+  static Future<bool> backup() async {
     String url =
         'https://${BackupApiService.getInstance().getIP()}:${BackupApiService.getInstance().getPORT()}/backup';
     Response response = await BackupApiService.getInstance().dio.post(url);
     if (response.data["responseType"] != "ok") {
       throw response.data;
     }
+    return true;
   }
 
   static Future<bool> delete(String shiftId) async {
